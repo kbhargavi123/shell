@@ -1,0 +1,13 @@
+<project name="replace" default="replace">
+
+<!--<property file="temp.replace" />-->
+<target name="replace" depends="clean">
+<mkdir dir="dist"/>
+<filter filtersfile="replaced.txt"/>
+ <copy todir="dist" file="a.properties" filtering="true"/>
+ <copy todir="dist" file="b.properties" filtering="true"/>
+ </target>
+ <target name="clean" >
+ <delete dir="dist"/>
+ </target>
+</project>
